@@ -1,157 +1,54 @@
 <?php include 'components/header.php'; ?>
 
-<!-- ==========================================
-     HERO SECTION (FULLSCREEN 100VH)
-     ========================================== -->
-<section id="hero" class="hero-section">
-    <div class="hero-bg"></div>
-    <div class="hero-overlay"></div>
-    
-    <div class="container hero-content">
-        <div class="hero-badge reveal">
-            <i class="fa-solid fa-gem"></i> Exclusive Ultra-Luxury Real Estate
-        </div>
-        
-        <h1 class="hero-title reveal">
-            Architecture That Defines <span style="color: #000;">Exceptional Living</span>
-        </h1>
-        
-        <p class="hero-subtitle reveal">
-            Discover handpicked waterfront villas, sky penthouses, and private estates curated for discerning global buyers.
-        </p>
+<!-- Swiper & GSAP Libraries -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
-        <!-- Real Estate Search Filter Widget -->
-        <div class="search-widget reveal">
-            <div class="search-tabs">
-                <button class="tab-btn active"><i class="fa-solid fa-key"></i> Buy Property</button>
-                <button class="tab-btn"><i class="fa-solid fa-building-user"></i> Rent Luxury</button>
-                <button class="tab-btn"><i class="fa-solid fa-tag"></i> Sell Estate</button>
+<!-- ==========================================
+     1. HERO SWIPER CAROUSEL SECTION
+     ========================================== -->
+<section class="hero-section">
+    <div class="hero-wrapper">
+        <!-- Left Side Text Line Overlay -->
+        <div class="hero-left-overlay">
+            <span class="hero-left-tag"><i class="fa-solid fa-crown"></i> LUXURY RESIDENTIAL EXPERTS</span>
+            <h1 class="hero-left-title">Crafting Premium <br><span>Builder Floors</span></h1>
+            <p class="hero-left-desc">Transforming architectural visions into bespoke luxury residences across Faridabad & Delhi NCR.</p>
+            <div class="hero-left-actions">
+                <a href="#projects" class="hero-left-btn">EXPLORE PROJECTS <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="tel:+919999566126" class="hero-left-phone-btn"><i class="fa-solid fa-phone"></i> +91 99995 66126</a>
             </div>
-            
-            <form class="search-grid" onsubmit="event.preventDefault();">
-                <div class="search-field">
-                    <label><i class="fa-solid fa-location-dot" style="color: var(--accent-gold);"></i> Location / Destination</label>
-                    <select class="search-input">
-                        <option>Beverly Hills, California</option>
-                        <option>Palm Jumeirah, Dubai</option>
-                        <option>Monaco, French Riviera</option>
-                        <option>Manhattan Penthouse, NYC</option>
-                        <option>Zurich Lakefront, Switzerland</option>
-                    </select>
-                </div>
-
-                <div class="search-field">
-                    <label><i class="fa-solid fa-house" style="color: var(--accent-gold);"></i> Property Type</label>
-                    <select class="search-input">
-                        <option>Waterfront Villa</option>
-                        <option>Sky Penthouse</option>
-                        <option>Golf Estate</option>
-                        <option>Private Island</option>
-                    </select>
-                </div>
-
-                <div class="search-field">
-                    <label><i class="fa-solid fa-dollar-sign" style="color: var(--accent-gold);"></i> Price Range</label>
-                    <select class="search-input">
-                        <option>$3,000,000 - $5,000,000</option>
-                        <option>$5,000,000 - $10,000,000</option>
-                        <option>$10,000,000 - $25,000,000</option>
-                        <option>$25,000,000+</option>
-                    </select>
-                </div>
-
-                <button type="submit" class="btn-gold search-submit-btn">
-                    <i class="fa-solid fa-magnifying-glass"></i> Explore
-                </button>
-            </form>
         </div>
-    </div>
 
-    <!-- Animated Scroll Down Indicator -->
-    <a href="#ticker" class="scroll-down-indicator" aria-label="Scroll down">
-        <i class="fa-solid fa-chevron-down"></i>
-    </a>
-</section>
+        <div class="swiper heroSwiper">
+            <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <div class="swiper-slide">
+                    <div class="hero-slide-bg" style="background-image: url('assets/images/home_hero_bg.jpg');"></div>
+                </div>
 
-<!-- ==========================================
-     FAMOUS CITIES
-     ========================================== -->
-<section id="famous-cities" class="section-padding">
-    <div class="container">
-        <div class="section-header reveal">
-            <span class="section-subtitle">Global Reach</span>
-            <h2 class="section-title">Property from <span class="gold-text">Famous Cities</span></h2>
-        </div>
-        <div class="cities-grid">
-            <div class="city-card reveal"><i class="fa-solid fa-city city-icon"></i><span class="city-name">Mumbai</span></div>
-            <div class="city-card reveal"><i class="fa-solid fa-building city-icon"></i><span class="city-name">Delhi</span></div>
-            <div class="city-card reveal"><i class="fa-solid fa-monument city-icon"></i><span class="city-name">Bangalore</span></div>
-            <div class="city-card reveal"><i class="fa-solid fa-hotel city-icon"></i><span class="city-name">Hyderabad</span></div>
-            <div class="city-card reveal"><i class="fa-solid fa-tree-city city-icon"></i><span class="city-name">Chennai</span></div>
-            
-            <div class="city-card reveal"><i class="fa-solid fa-bridge-water city-icon"></i><span class="city-name">Kolkata</span></div>
-            <div class="city-card reveal"><i class="fa-solid fa-umbrella-beach city-icon"></i><span class="city-name">Goa</span></div>
-            <div class="city-card reveal"><i class="fa-solid fa-building-columns city-icon"></i><span class="city-name">Pune</span></div>
-            <div class="city-card reveal"><i class="fa-solid fa-archway city-icon"></i><span class="city-name">Ahmedabad</span></div>
-            <div class="city-card reveal"><i class="fa-solid fa-gopuram city-icon"></i><span class="city-name">Jaipur</span></div>
-            
-            <div class="city-card reveal"><i class="fa-solid fa-tower-observation city-icon"></i><span class="city-name">Surat</span></div>
-            <div class="city-card reveal"><i class="fa-solid fa-water city-icon"></i><span class="city-name">Lucknow</span></div>
-            <div class="city-card reveal"><i class="fa-solid fa-ship city-icon"></i><span class="city-name">Kochi</span></div>
-            <div class="city-card reveal"><i class="fa-solid fa-landmark-dome city-icon"></i><span class="city-name">Chandigarh</span></div>
-            <div class="city-card reveal"><i class="fa-solid fa-mountain-city city-icon"></i><span class="city-name">Indore</span></div>
+                <!-- Slide 2 -->
+                <div class="swiper-slide">
+                    <div class="hero-slide-bg" style="background-image: url('assets/images/home_hero_bg_2.jpg');"></div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="swiper-slide">
+                    <div class="hero-slide-bg" style="background-image: url('assets/images/home_hero_bg_3.jpg');"></div>
+                </div>
+            </div>
+
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
         </div>
     </div>
 </section>
 
 <!-- ==========================================
-     REAL ESTATE SERVICES
-     ========================================== -->
-<section id="real-estate-services" class="section-padding" style="background: rgba(18, 24, 38, 0.02);">
-    <div class="container">
-        <div class="section-header reveal">
-            <span class="section-subtitle">Comprehensive Solutions</span>
-            <h2 class="section-title">Real Estate <span class="gold-text">Services</span></h2>
-        </div>
-        <div class="services-grid">
-            <div class="service-card reveal">
-                <div class="service-icon-wrapper"><i class="fa-solid fa-user-tie"></i></div>
-                <h3 class="service-title">Agents</h3>
-            </div>
-            <div class="service-card reveal">
-                <div class="service-icon-wrapper"><i class="fa-solid fa-helmet-safety"></i></div>
-                <h3 class="service-title">Builders</h3>
-            </div>
-            <div class="service-card reveal">
-                <div class="service-icon-wrapper"><i class="fa-solid fa-compass-drafting"></i></div>
-                <h3 class="service-title">Architects</h3>
-            </div>
-            <div class="service-card reveal">
-                <div class="service-icon-wrapper"><i class="fa-solid fa-couch"></i></div>
-                <h3 class="service-title">Interiors</h3>
-            </div>
-            <div class="service-card reveal">
-                <div class="service-icon-wrapper"><i class="fa-solid fa-dharmachakra"></i></div>
-                <h3 class="service-title">Vastu Consultant</h3>
-            </div>
-            <div class="service-card reveal">
-                <div class="service-icon-wrapper"><i class="fa-solid fa-file-contract"></i></div>
-                <h3 class="service-title">Building Contract</h3>
-            </div>
-            <div class="service-card reveal">
-                <div class="service-icon-wrapper"><i class="fa-solid fa-house-circle-check"></i></div>
-                <h3 class="service-title">Home Inspect</h3>
-            </div>
-            <div class="service-card reveal">
-                <div class="service-icon-wrapper"><i class="fa-solid fa-handshake-angle"></i></div>
-                <h3 class="service-title">Property Consultant</h3>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ==========================================
-     LINEAR MOVING TICKER (LEFT TO RIGHT)
+     LINEAR MOVING TICKER (RIGHT TO LEFT)
      ========================================== -->
 <div id="ticker" class="ticker-section">
     <div class="ticker-track">
@@ -161,7 +58,7 @@
         <div class="ticker-item"><i class="fa-solid fa-helicopter"></i> VIP Helicopter & Jet Transfers</div>
         <div class="ticker-item"><i class="fa-solid fa-user-shield"></i> Vaulted Identity & Data Privacy</div>
         <div class="ticker-item"><i class="fa-solid fa-infinity"></i> Direct Owner & Developer Escrow</div>
-        <!-- Duplicate set for seamless infinite scrolling loop -->
+        <!-- Duplicate for loop -->
         <div class="ticker-item"><i class="fa-solid fa-crown"></i> 100% Verified Legal Title Deeds</div>
         <div class="ticker-item"><i class="fa-solid fa-gem"></i> 0% Hidden Brokerage Commissions</div>
         <div class="ticker-item"><i class="fa-solid fa-vr-cardboard"></i> 4K Ultra-HD Virtual 3D Tours</div>
@@ -172,271 +69,525 @@
 </div>
 
 <!-- ==========================================
-     PROBLEM & SOLUTION CARDS
+     2. ABOUT US SECTION (EXACT MATCH)
      ========================================== -->
-<section id="solutions" class="section-padding">
+<section id="about" class="about-section">
     <div class="container">
-        <div class="section-header reveal">
-            <span class="section-subtitle">Redefining Real Estate</span>
-            <h2 class="section-title">The Traditional Pitfalls vs. <span class="gold-text">Our Solution</span></h2>
-            <p style="color: var(--text-secondary);">We eliminated the friction, deception, and delays of conventional property transactions to craft a flawless luxury experience.</p>
+        <!-- Centered Section Header -->
+        <div class="about-section-header">
+            <h2 class="about-title-italic">About <span>MyPropertyStation</span></h2>
+            <div class="about-title-underline"></div>
         </div>
 
-        <div class="problem-solution-grid">
-            <!-- Problem Card -->
-            <div class="ps-card problem-card reveal">
-                <div class="ps-header">
-                    <div class="ps-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
-                    <h3 class="ps-title">Traditional Market Problems</h3>
+        <div class="about-container">
+            <!-- Left Side: Framed Image Visual -->
+            <div class="about-left">
+                <div class="about-image-frame-box">
+                    <div class="about-image-wrapper">
+                        <img src="assets/images/about_office_facade.jpg" alt="MyPropertyStation Corporate Office Facade" class="about-single-img">
+                        <div class="about-image-card">
+                            <span class="card-number">25+</span>
+                            <span class="card-text">YEARS OF EXCELLENCE</span>
+                        </div>
+                    </div>
                 </div>
-                <ul class="ps-list">
-                    <li class="ps-item">
-                        <i class="fa-solid fa-xmark"></i>
-                        <div>
-                            <div class="ps-item-title">Phantom & Outdated Listings</div>
-                            <div class="ps-item-desc">70% of online listings are bait-and-switch tactics or have already been sold.</div>
-                        </div>
-                    </li>
-                    <li class="ps-item">
-                        <i class="fa-solid fa-xmark"></i>
-                        <div>
-                            <div class="ps-item-title">Exorbitant Middleman Fees</div>
-                            <div class="ps-item-desc">Multiple broker layers inflate prices with hidden commissions and unexpected transaction costs.</div>
-                        </div>
-                    </li>
-                    <li class="ps-item">
-                        <i class="fa-solid fa-xmark"></i>
-                        <div>
-                            <div class="ps-item-title">Spam & Data Exposure</div>
-                            <div class="ps-item-desc">Inquiring on properties results in your phone number being sold to high-pressure telemarketers.</div>
-                        </div>
-                    </li>
-                    <li class="ps-item">
-                        <i class="fa-solid fa-xmark"></i>
-                        <div>
-                            <div class="ps-item-title">Opaque Legal Risks</div>
-                            <div class="ps-item-desc">Unclear property titles, encumbrances, and legal ambiguities creating financial risk.</div>
-                        </div>
-                    </li>
-                </ul>
             </div>
 
-            <!-- Solution Card -->
-            <div class="ps-card solution-card reveal">
-                <div class="ps-header">
-                    <div class="ps-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                    <h3 class="ps-title">MyPropertyStation Promise</h3>
+            <!-- Right Side: Text Content -->
+            <div class="about-right">
+                <p class="about-lead">A Legacy of Trust, Transparency & Architectural Brilliance in Faridabad.</p>
+                <p><strong>MyPropertyStation</strong> is a premier real estate construction and consultancy company dedicated to delivering high-quality residential spaces and premium builder floors in Faridabad, Delhi NCR. Under the visionary leadership of our founders, we have pioneered the standard of luxury living by combining world-class materials, European-inspired elevation designs, and timely project delivery.</p>
+                <p>Our focus is to build spacious, aesthetically rich, and age-proof homes that guarantee long-term value for our clients. Through transparent communication, dedicated after-sales support, and a customer-first approach, we make the journey of owning your dream home absolute peace of mind.</p>
+                <div class="about-cta-wrapper">
+                    <a href="#contact" class="about-btn">EXPLORE OUR JOURNEY</a>
                 </div>
-                <ul class="ps-list">
-                    <li class="ps-item">
-                        <i class="fa-solid fa-check"></i>
-                        <div>
-                            <div class="ps-item-title">100% Blockchain & Physical Audit Verification</div>
-                            <div class="ps-item-desc">Every listing is physically inspected and backed by legal ownership verification.</div>
-                        </div>
-                    </li>
-                    <li class="ps-item">
-                        <i class="fa-solid fa-check"></i>
-                        <div>
-                            <div class="ps-item-title">Zero Hidden Commissions</div>
-                            <div class="ps-item-desc">Transparent pricing with direct owner connection and secure Escrow payment protections.</div>
-                        </div>
-                    </li>
-                    <li class="ps-item">
-                        <i class="fa-solid fa-check"></i>
-                        <div>
-                            <div class="ps-item-title">Vaulted Encryption Privacy</div>
-                            <div class="ps-item-desc">Your contact information is strictly protected. Only communicate with verified property representatives.</div>
-                        </div>
-                    </li>
-                    <li class="ps-item">
-                        <i class="fa-solid fa-check"></i>
-                        <div>
-                            <div class="ps-item-title">End-to-End White-Glove Legal Team</div>
-                            <div class="ps-item-desc">In-house legal counsel handles title clearance, contracts, and cross-border paperwork seamlessly.</div>
-                        </div>
-                    </li>
-                </ul>
             </div>
         </div>
     </div>
 </section>
 
 <!-- ==========================================
-     FEATURED LUXURY PROPERTIES GRID
+     3. PRESENCE MAP SECTION (INTERACTIVE GSAP)
      ========================================== -->
-<section id="properties" class="section-padding" style="background: rgba(18, 24, 38, 0.4); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+<section class="projects-map-section">
+    <div class="map-bg-glow glow-1"></div>
+    <div class="map-bg-glow glow-2"></div>
+
+    <div class="container projects-map-container">
+        <!-- Left Side: Explorer & Stats -->
+        <div class="p-map-content">
+            <div class="p-map-badge">ELITE NCR ADDRESSES</div>
+            <h2>Presence of <br><span class="gold-text">MyPropertyStation</span></h2>
+            <div class="p-map-title-underline"></div>
+            
+            <p class="p-map-description">We build luxury architectural masterworks in India's most highly-sought residential neighborhoods. Explore our active premier hubs across Delhi NCR, meticulously designed for multi-generational elegance.</p>
+            
+            <!-- Location Tabs -->
+            <div class="map-location-selector">
+                <div class="loc-card active" data-location="faridabad">
+                    <span class="loc-dot"></span>
+                    <div class="loc-card-info">
+                        <h4>Faridabad</h4>
+                        <span class="loc-count">15+ Floors</span>
+                    </div>
+                </div>
+                <div class="loc-card" data-location="gurugram">
+                    <span class="loc-dot"></span>
+                    <div class="loc-card-info">
+                        <h4>Gurugram</h4>
+                        <span class="loc-count">8+ Projects</span>
+                    </div>
+                </div>
+                <div class="loc-card" data-location="delhi">
+                    <span class="loc-dot"></span>
+                    <div class="loc-card-info">
+                        <h4>South Delhi</h4>
+                        <span class="loc-count">5+ Floors</span>
+                    </div>
+                </div>
+                <div class="loc-card" data-location="noida">
+                    <span class="loc-dot"></span>
+                    <div class="loc-card-info">
+                        <h4>Noida NCR</h4>
+                        <span class="loc-count">Upcoming</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Counters -->
+            <div class="p-map-stats">
+                <div class="stat-card">
+                    <h3><span class="stat-number" data-target="25">25</span>+</h3>
+                    <p>Premium Projects</p>
+                </div>
+                <div class="stat-card">
+                    <h3><span class="stat-number" data-target="10">10</span>M+</h3>
+                    <p>Sq.Ft. Delivered</p>
+                </div>
+            </div>
+
+            <a href="projects.php" class="btn btn-primary map-cta-btn">View All Projects <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <!-- Right Side: Interactive Tooltip Box -->
+        <div class="p-map-visual">
+            <div class="map-tooltip-box">
+                <div class="tooltip-header">
+                    <span class="tooltip-badge">CORE LUXURY HUB</span>
+                    <h4 id="tooltip-title">Faridabad</h4>
+                </div>
+                <p id="tooltip-desc">15+ Handcrafted premium builder floors in elite Sectors 14, 15, 21, and 85. Our main center of design excellence featuring European architectural elevations, marble flooring, and modular setups.</p>
+                <div class="tooltip-footer">
+                    <div class="tooltip-stat">
+                        <span class="t-label">Status</span>
+                        <span class="t-val text-green" id="tooltip-status">Ready to Move & Ongoing</span>
+                    </div>
+                    <div class="tooltip-stat">
+                        <span class="t-label">Price Range</span>
+                        <span class="t-val" id="tooltip-price">₹1.5Cr - ₹4.5Cr</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==========================================
+     4. CURATED BUILDER FLOORS CAROUSEL
+     ========================================== -->
+<section id="projects" class="projects-section section-padding">
     <div class="container">
-        <div class="section-header reveal">
-            <span class="section-subtitle">Private Collection</span>
-            <h2 class="section-title">Featured <span class="gold-text">Ultra-Luxury Estates</span></h2>
-            <p style="color: var(--text-secondary);">handcrafted residences featuring world-class architecture, unmatched views, and bespoke interiors.</p>
+        <div class="section-header">
+            <span class="section-subtitle">CURATED COLLECTION</span>
+            <h2 class="section-title">Our Premium <span class="gold-text">Builder Floors</span></h2>
+            <p style="color: var(--text-secondary);">Discover our meticulously crafted residential spaces that redefine modern luxury.</p>
         </div>
 
         <div class="property-grid">
-            <!-- Property 1 -->
-            <div class="property-card reveal">
+            <div class="property-card">
                 <div class="property-thumb">
-                    <img src="assets/images/property_1.jpg" alt="The Glass Skyline Penthouse">
-                    <span class="property-badge">Sky Penthouse</span>
+                    <img src="assets/images/project_1_1786439384557.jpg" alt="Zenith Sky Penthouses">
+                    <span class="property-badge">Pre-Launch</span>
                     <span class="property-price">$12,800,000</span>
                 </div>
                 <div class="property-details">
-                    <h3 class="property-title">The Glass Horizon Sky Villa</h3>
+                    <h3 class="property-title">The Zenith Sky Penthouses</h3>
                     <p class="property-location"><i class="fa-solid fa-location-dot" style="color: var(--accent-gold);"></i> Manhattan Skyline, NYC</p>
                     <div class="property-features">
-                        <span><i class="fa-solid fa-bed" style="color: var(--accent-gold);"></i> 5 Beds</span>
-                        <span><i class="fa-solid fa-bath" style="color: var(--accent-gold);"></i> 7 Baths</span>
-                        <span><i class="fa-solid fa-vector-square" style="color: var(--accent-gold);"></i> 8,500 SqFt</span>
+                        <span><i class="fa-solid fa-bed"></i> 5 Beds</span>
+                        <span><i class="fa-solid fa-bath"></i> 7 Baths</span>
+                        <span><i class="fa-solid fa-vector-square"></i> 8,500 SqFt</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Property 2 -->
-            <div class="property-card reveal">
+            <div class="property-card">
                 <div class="property-thumb">
-                    <img src="assets/images/property_2.jpg" alt="Waterfront Azure Mansion">
-                    <span class="property-badge">Waterfront Estate</span>
+                    <img src="assets/images/project_2_1786439743827.jpg" alt="Aethelgard Private Islands">
+                    <span class="property-badge">Under Construction</span>
                     <span class="property-price">$24,500,000</span>
                 </div>
                 <div class="property-details">
-                    <h3 class="property-title">Azure Infinity Ocean Estate</h3>
+                    <h3 class="property-title">Aethelgard Private Islands</h3>
                     <p class="property-location"><i class="fa-solid fa-location-dot" style="color: var(--accent-gold);"></i> Palm Jumeirah, Dubai</p>
                     <div class="property-features">
-                        <span><i class="fa-solid fa-bed" style="color: var(--accent-gold);"></i> 7 Beds</span>
-                        <span><i class="fa-solid fa-bath" style="color: var(--accent-gold);"></i> 9 Baths</span>
-                        <span><i class="fa-solid fa-vector-square" style="color: var(--accent-gold);"></i> 14,200 SqFt</span>
+                        <span><i class="fa-solid fa-bed"></i> 7 Beds</span>
+                        <span><i class="fa-solid fa-bath"></i> 9 Baths</span>
+                        <span><i class="fa-solid fa-vector-square"></i> 14,200 SqFt</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Property 3 -->
-            <div class="property-card reveal">
+            <div class="property-card">
                 <div class="property-thumb">
-                    <img src="assets/images/property_3.jpg" alt="The Sanctuary Glass Residence">
-                    <span class="property-badge">Contemporary Villa</span>
+                    <img src="assets/images/property_3.jpg" alt="Minimalist Glass Sanctuary">
+                    <span class="property-badge">Ready To Move</span>
                     <span class="property-price">$16,200,000</span>
                 </div>
                 <div class="property-details">
                     <h3 class="property-title">The Minimalist Glass Sanctuary</h3>
                     <p class="property-location"><i class="fa-solid fa-location-dot" style="color: var(--accent-gold);"></i> Beverly Hills, California</p>
                     <div class="property-features">
-                        <span><i class="fa-solid fa-bed" style="color: var(--accent-gold);"></i> 6 Beds</span>
-                        <span><i class="fa-solid fa-bath" style="color: var(--accent-gold);"></i> 8 Baths</span>
-                        <span><i class="fa-solid fa-vector-square" style="color: var(--accent-gold);"></i> 10,800 SqFt</span>
+                        <span><i class="fa-solid fa-bed"></i> 6 Beds</span>
+                        <span><i class="fa-solid fa-bath"></i> 8 Baths</span>
+                        <span><i class="fa-solid fa-vector-square"></i> 10,800 SqFt</span>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+</section>
 
-        <div style="text-align: center; margin-top: 3.5rem;" class="reveal">
-            <a href="#contact" class="btn-gold" style="padding: 1rem 2.5rem; font-size: 1rem;">
-                <i class="fa-solid fa-eye"></i> View All Off-Market Listings
-            </a>
+<!-- ==========================================
+     5. FOUNDER'S VISION SECTION (EXACT MATCH WITH PLACEHOLDER)
+     ========================================== -->
+<section id="visionary" class="visionary-section">
+    <div class="container">
+        <div class="visionary-container">
+            <!-- Left Side: Placeholder Graphic Card framed in Gold -->
+            <div class="visionary-left">
+                <div class="visionary-frame-box">
+                    <div class="visionary-placeholder-card">
+                        <div class="ph-card-header">
+                            <img src="assets/images/nav_logo.png" alt="MyPropertyStation Logo" class="ph-logo-img">
+                            <span class="ph-brand-name">MYPROPERTY<span class="gold-text">STATION</span></span>
+                        </div>
+                        
+                        <div class="ph-card-body">
+                            <div class="ph-avatar-icon">
+                                <i class="fa-solid fa-user-tie"></i>
+                            </div>
+                            <h3 class="ph-title">Meet the Visionary Behind</h3>
+                            <h4 class="ph-subbrand">MyPropertyStation</h4>
+                            <p class="ph-desc">Decades of building mastery, seamless happy families, and a commitment to honest property deals.</p>
+                        </div>
+
+                        <!-- Overlapping Dark Card at Bottom Right -->
+                        <div class="visionary-image-card">
+                            <span class="v-card-name">Leadership Team</span>
+                            <span class="v-card-title">FOUNDER & MANAGING DIRECTOR</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Content -->
+            <div class="visionary-right">
+                <h2 class="visionary-heading">
+                    Meet the Visionary Behind<br>
+                    <span>MyPropertyStation</span>
+                </h2>
+                <div class="visionary-heading-underline"></div>
+
+                <p class="visionary-intro">
+                    With over two decades of uncompromising building mastery and absolute dedication to client trust, our leadership has shaped the landscape of premium housing and builder floors in Faridabad, Delhi NCR. Under this guidance, MyPropertyStation has become synonymous with elite engineering, transparent relationships, and premium architectural luxury.
+                </p>
+
+                <!-- 3 Feature Points -->
+                <div class="visionary-features">
+                    <!-- Point 1 -->
+                    <div class="v-feature-item">
+                        <div class="v-icon-box">
+                            <i class="fa-solid fa-gem"></i>
+                        </div>
+                        <div class="v-feature-text">
+                            <h4>Architectural Distinction</h4>
+                            <p>Delivering European-inspired exterior aesthetics, spacious high-ceiling layouts, and premium ventilation profiles that elevate standard of living.</p>
+                        </div>
+                    </div>
+
+                    <!-- Point 2 -->
+                    <div class="v-feature-item">
+                        <div class="v-icon-box">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <div class="v-feature-text">
+                            <h4>Zero-Compromise Materials</h4>
+                            <p>Constructing multi-generational, age-proof homes utilizing only the highest grade certified grade concrete, reinforced premium steels, and premium marble slabs.</p>
+                        </div>
+                    </div>
+
+                    <!-- Point 3 -->
+                    <div class="v-feature-item">
+                        <div class="v-icon-box">
+                            <i class="fa-solid fa-handshake"></i>
+                        </div>
+                        <div class="v-feature-text">
+                            <h4>Radical Transparency</h4>
+                            <p>Strict commitment to delivery timelines, crystal clear paperwork, and post-delivery home maintenance assistance that fosters absolute peace of mind.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Quote Card -->
+                <div class="visionary-quote-card">
+                    <p class="v-quote-text">"At MyPropertyStation, we do not simply build upscale residential floors; we craft luxury spaces where families construct lifetimes of memories. Quality is our signature, and your trust is our core foundation."</p>
+                    <span class="v-quote-author">— EXECUTIVE LEADERSHIP</span>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
 <!-- ==========================================
-     WHY MYPROPERTYSTATION (LUXURY VALUE PROPOSITION)
+     6. SPECIFICATIONS & CONSTRUCTION PHILOSOPHY (EXACT MATCH)
      ========================================== -->
-<section id="why-us" class="section-padding">
+<section id="specifications" class="philosophy-section">
     <div class="container">
-        <div class="section-header reveal">
-            <span class="section-subtitle">Excellence Guaranteed</span>
-            <h2 class="section-title">Why Choose <span class="gold-text">MyPropertyStation</span></h2>
-            <p style="color: var(--text-secondary);">We combine global luxury real estate expertise with modern tech security to deliver unmatched value.</p>
+        <!-- Top Pill Tag -->
+        <div class="philosophy-tag-wrap">
+            <span class="philosophy-pill-badge">OUR CONSTRUCTION PHILOSOPHY</span>
         </div>
 
-        <div class="why-us-grid">
-            <div class="feature-box reveal">
-                <div class="feature-icon-wrapper">
-                    <i class="fa-solid fa-award"></i>
+        <div class="philosophy-container">
+            <!-- Left Side: Framed Poster Image -->
+            <div class="philosophy-left">
+                <div class="philosophy-frame-box">
+                    <div class="philosophy-img-wrapper">
+                        <img src="assets/images/construction_philosophy.jpg" alt="Constant Discussion & Continuous Improvement" class="philosophy-poster-img">
+                        <div class="philosophy-image-card">
+                            <span class="ph-card-tag">ON-SITE DISCUSSIONS</span>
+                            <span class="ph-card-title">Refining Architectural Excellence</span>
+                        </div>
+                    </div>
                 </div>
-                <h3 class="feature-title">Top 1% Curated Portfolio</h3>
-                <p class="feature-desc">Every single property undergoes a strict 50-point quality, architectural integrity, and legal audit before listing.</p>
             </div>
 
-            <div class="feature-box reveal">
-                <div class="feature-icon-wrapper">
-                    <i class="fa-solid fa-fingerprint"></i>
-                </div>
-                <h3 class="feature-title">AI Preference Matching</h3>
-                <p class="feature-desc">Our proprietary AI algorithm matches your lifestyle taste, view preferences, and architectural desires to off-market gems.</p>
-            </div>
+            <!-- Right Side: Content -->
+            <div class="philosophy-right">
+                <h2 class="philosophy-heading">
+                    Constant Discussion &<br>
+                    <span>Continuous Improvement</span>
+                </h2>
+                <div class="philosophy-heading-underline"></div>
 
-            <div class="feature-box reveal">
-                <div class="feature-icon-wrapper">
-                    <i class="fa-solid fa-plane-up"></i>
-                </div>
-                <h3 class="feature-title">VIP Private Jet Tours</h3>
-                <p class="feature-desc">High-net-worth buyers receive on-demand private helicopter and jet transportation for physical estate walk-throughs.</p>
-            </div>
+                <p class="philosophy-intro">
+                    At <strong>MyPropertyStation</strong>, structural superiority is never an accident—it is the direct result of rigorous, daily on-site collaboration. By engaging in constant team discussions, evaluating micro-details, and driving a culture of continuous improvement, our architects, builders, and structural engineers ensure every brick laid exceeds global benchmarks.
+                </p>
 
-            <div class="feature-box reveal">
-                <div class="feature-icon-wrapper">
-                    <i class="fa-solid fa-vault"></i>
+                <!-- 3 Feature Points -->
+                <div class="philosophy-features">
+                    <!-- Feature 1 -->
+                    <div class="ph-feature-item">
+                        <div class="ph-icon-box">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                        <div class="ph-feature-text">
+                            <h4>Daily On-Site Brainstorming</h4>
+                            <p>Daily alignment audits between execution engineers and architects ensure flawless translation of design schematics to the physical structure.</p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="ph-feature-item">
+                        <div class="ph-icon-box">
+                            <i class="fa-solid fa-arrows-rotate"></i>
+                        </div>
+                        <div class="ph-feature-text">
+                            <h4>Feedback-Driven Material Selection</h4>
+                            <p>We continuously review structural materials, upgrading to premium steel aggregates, custom vitrified tiles, and eco-friendly insulating paint coats.</p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="ph-feature-item">
+                        <div class="ph-icon-box">
+                            <i class="fa-solid fa-sliders"></i>
+                        </div>
+                        <div class="ph-feature-text">
+                            <h4>Quality Control Inspections</h4>
+                            <p>A multi-stage quality review before casting concrete slabs, running concealed pipelines, and laying premium stone floor borders.</p>
+                        </div>
+                    </div>
                 </div>
-                <h3 class="feature-title">Bank-Grade Escrow Safety</h3>
-                <p class="feature-desc">Financial transactions and earnest deposits are protected under international legal escrow guarantees.</p>
             </div>
         </div>
     </div>
 </section>
 
 <!-- ==========================================
-     FREQUENTLY ASKED QUESTIONS (FAQS)
+     7. ARCHITECTURAL GALLERY PORTFOLIO & LIGHTBOX
      ========================================== -->
-<section id="faqs" class="section-padding" style="background: rgba(18, 24, 38, 0.4); border-top: 1px solid var(--border-color);">
+<section class="gallery-section" id="gallery-portfolio">
     <div class="container">
-        <div class="section-header reveal">
-            <span class="section-subtitle">Got Questions?</span>
-            <h2 class="section-title">Frequently Asked <span class="gold-text">Questions</span></h2>
-            <p style="color: var(--text-secondary);">Everything you need to know about buying, selling, and listing luxury real estate with us.</p>
-        </div>
-
-        <div class="faq-accordion reveal">
-            <div class="faq-item active">
-                <button class="faq-question">
-                    <span>How does MyPropertyStation verify listed properties?</span>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </button>
-                <div class="faq-answer">
-                    <p>Our team performs physical site visits, 4K architectural drone mapping, title deed verification with local land registries, and background checks on property owners to ensure 100% authenticity.</p>
-                </div>
+        <!-- Floating Dark Container Card -->
+        <div class="gallery-card-wrapper">
+            <div class="gallery-header">
+                <span class="gallery-micro-tag">VISUAL PORTFOLIO</span>
+                <h2 class="gallery-title">Our Architectural <span>Gallery</span></h2>
+                <div class="gallery-title-underline"></div>
+                <p class="gallery-subtitle">Take an exclusive visual tour of our exquisitely designed builder floors, luxury interiors, and premium elevations executed across Faridabad.</p>
             </div>
 
-            <div class="faq-item">
-                <button class="faq-question">
-                    <span>Can international buyers purchase properties through your platform?</span>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </button>
-                <div class="faq-answer">
-                    <p>Yes. We specialize in cross-border luxury real estate transactions. Our in-house legal advisory assists with golden visas, tax structuring, currency transfers, and foreign ownership regulations.</p>
+            <div class="gallery-grid">
+                <div class="gallery-card" onclick="openLightbox(0)">
+                    <img src="assets/images/home_hero_bg.jpg" alt="Gallery Image 1">
+                    <div class="gallery-overlay"><i class="fa-solid fa-expand"></i></div>
                 </div>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-question">
-                    <span>How do off-market private listings work?</span>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </button>
-                <div class="faq-answer">
-                    <p>Many ultra-high-net-worth owners prefer privacy. These properties are not publicly indexed. Qualified buyers receive NDA-backed access to private 3D virtual walk-throughs and confidential dossiers.</p>
+                <div class="gallery-card" onclick="openLightbox(1)">
+                    <img src="assets/images/projects_hero_1786439305331.jpg" alt="Gallery Image 2">
+                    <div class="gallery-overlay"><i class="fa-solid fa-expand"></i></div>
                 </div>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-question">
-                    <span>What are the fees for listing my property on MyPropertyStation?</span>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </button>
-                <div class="faq-answer">
-                    <p>We offer transparent tier pricing with zero hidden commissions. Direct owner-to-buyer listing options are available alongside white-glove full-representation management.</p>
+                <div class="gallery-card" onclick="openLightbox(2)">
+                    <img src="assets/images/commercial_hero_1786439354638.jpg" alt="Gallery Image 3">
+                    <div class="gallery-overlay"><i class="fa-solid fa-expand"></i></div>
+                </div>
+                <div class="gallery-card" onclick="openLightbox(3)">
+                    <img src="assets/images/project_1_1786439384557.jpg" alt="Gallery Image 4">
+                    <div class="gallery-overlay"><i class="fa-solid fa-expand"></i></div>
+                </div>
+                <div class="gallery-card" onclick="openLightbox(4)">
+                    <img src="assets/images/project_2_1786439743827.jpg" alt="Gallery Image 5">
+                    <div class="gallery-overlay"><i class="fa-solid fa-expand"></i></div>
+                </div>
+                <div class="gallery-card" onclick="openLightbox(5)">
+                    <img src="assets/images/property_3.jpg" alt="Gallery Image 6">
+                    <div class="gallery-overlay"><i class="fa-solid fa-expand"></i></div>
+                </div>
+                <div class="gallery-card" onclick="openLightbox(6)">
+                    <img src="assets/images/home_hero_bg_2.jpg" alt="Gallery Image 7">
+                    <div class="gallery-overlay"><i class="fa-solid fa-expand"></i></div>
+                </div>
+                <div class="gallery-card" onclick="openLightbox(7)">
+                    <img src="assets/images/home_hero_bg_3.jpg" alt="Gallery Image 8">
+                    <div class="gallery-overlay"><i class="fa-solid fa-expand"></i></div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+<!-- Lightbox Modal -->
+<div id="galleryLightbox" class="gallery-lightbox">
+    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+    <button class="lightbox-nav-btn lightbox-prev" onclick="prevSlide(event)"><i class="fa-solid fa-chevron-left"></i></button>
+    <button class="lightbox-nav-btn lightbox-next" onclick="nextSlide(event)"><i class="fa-solid fa-chevron-right"></i></button>
+    <div class="lightbox-content">
+        <img id="lightboxImg" src="" alt="Enlarged gallery view">
+    </div>
+</div>
+
+<script>
+    // Swiper Hero Carousel setup
+    document.addEventListener('DOMContentLoaded', function () {
+        new Swiper(".heroSwiper", {
+            spaceBetween: 0,
+            centeredSlides: true,
+            effect: "fade",
+            fadeEffect: { crossFade: true },
+            speed: 1000,
+            autoplay: { delay: 5000, disableOnInteraction: false },
+            pagination: { el: ".swiper-pagination", clickable: true },
+            navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+            loop: true
+        });
+
+        // Interactive Map Location selector logic
+        const locationData = {
+            faridabad: {
+                title: "Faridabad",
+                badge: "CORE LUXURY HUB",
+                desc: "15+ Handcrafted premium builder floors in elite Sectors 14, 15, 21, and 85. Featuring European elevations and marble flooring.",
+                status: "Ready to Move & Ongoing",
+                price: "₹1.5Cr - ₹4.5Cr"
+            },
+            gurugram: {
+                title: "Gurugram Hub",
+                badge: "PREMIUM ELITE SECTOR",
+                desc: "8+ Ultra-luxury builder floors along Golf Course Extension Road. Automated smart home integrations and high-end societies.",
+                status: "Ongoing & Booking Open",
+                price: "₹2.5Cr - ₹6.5Cr"
+            },
+            delhi: {
+                title: "South Delhi Hub",
+                badge: "ULTRA-LUXURY COLLECTION",
+                desc: "5+ Super premium architectural residences in Greater Kailash, Vasant Vihar, and Panchsheel.",
+                status: "Exclusive Collaboration",
+                price: "₹4.5Cr - ₹12.0Cr"
+            },
+            noida: {
+                title: "Noida NCR",
+                badge: "MODERN RESIDENCES",
+                desc: "Upcoming luxury residences positioned in Sectors 44, 105, and 150 with modern clubhouses and high-speed lifts.",
+                status: "Pre-Launch Bookings",
+                price: "₹1.8Cr - ₹3.8Cr"
+            }
+        };
+
+        const locCards = document.querySelectorAll(".loc-card");
+        locCards.forEach(card => {
+            card.addEventListener("click", function() {
+                locCards.forEach(c => c.classList.remove("active"));
+                this.classList.add("active");
+                const key = this.getAttribute("data-location");
+                const data = locationData[key];
+                if (data) {
+                    document.getElementById("tooltip-title").textContent = data.title;
+                    document.querySelector(".tooltip-badge").textContent = data.badge;
+                    document.getElementById("tooltip-desc").textContent = data.desc;
+                    document.getElementById("tooltip-status").textContent = data.status;
+                    document.getElementById("tooltip-price").textContent = data.price;
+                }
+            });
+        });
+    });
+
+    // Gallery Lightbox
+    const galleryImages = [
+        "assets/images/home_hero_bg.jpg",
+        "assets/images/projects_hero_1786439305331.jpg",
+        "assets/images/commercial_hero_1786439354638.jpg",
+        "assets/images/project_1_1786439384557.jpg",
+        "assets/images/project_2_1786439743827.jpg",
+        "assets/images/property_3.jpg"
+    ];
+    let activeIndex = 0;
+    const lightbox = document.getElementById('galleryLightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+
+    function openLightbox(index) {
+        activeIndex = index;
+        lightboxImg.src = galleryImages[activeIndex];
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    function nextSlide(e) {
+        if (e) e.stopPropagation();
+        activeIndex = (activeIndex + 1) % galleryImages.length;
+        lightboxImg.src = galleryImages[activeIndex];
+    }
+
+    function prevSlide(e) {
+        if (e) e.stopPropagation();
+        activeIndex = (activeIndex - 1 + galleryImages.length) % galleryImages.length;
+        lightboxImg.src = galleryImages[activeIndex];
+    }
+</script>
 
 <?php include 'components/footer.php'; ?>
