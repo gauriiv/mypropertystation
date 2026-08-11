@@ -1,0 +1,7 @@
+{
+    "name": "mypropertystation/backend",
+    "description": "Backend API for MyPropertyStation",
+    "require": {
+        "phpauth/phpauth": "^1.6"
+    }
+}
