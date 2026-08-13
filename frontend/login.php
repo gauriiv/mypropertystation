@@ -1,0 +1,185 @@
+<?php include 'components/header.php'; ?>
+
+<style>
+/* Reuse styles from signup.php */
+.auth-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f172a 0%, #1e2a3a 50%, #0f172a 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 1.5rem 60px;
+}
+
+.auth-card {
+    background: #1a1d22;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 20px;
+    padding: 3rem 3rem;
+    width: 100%;
+    max-width: 460px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.5);
+}
+
+.auth-logo-wrap { text-align: center; margin-bottom: 2rem; }
+.auth-logo-wrap img { height: 60px; }
+
+.auth-title {
+    font-family: 'Cinzel', 'Playfair Display', Georgia, serif;
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 0.4rem;
+}
+.auth-title span { color: #d4af37; }
+
+.auth-subtitle { text-align: center; color: #94a3b8; font-size: 0.9rem; margin-bottom: 2rem; }
+
+.auth-divider {
+    width: 50px; height: 3px; background: #d4af37;
+    margin: 0.8rem auto 1.8rem; border-radius: 2px;
+}
+
+.auth-form-group { margin-bottom: 1.3rem; }
+
+.auth-label {
+    display: block; font-size: 0.75rem; font-weight: 700;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: #94a3b8; margin-bottom: 0.45rem;
+}
+
+.auth-input {
+    width: 100%; background: #0f172a;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px; padding: 0.85rem 1.1rem;
+    color: #ffffff; font-size: 0.95rem; outline: none;
+    transition: all 0.3s; font-family: inherit; box-sizing: border-box;
+}
+.auth-input:focus { border-color: #d4af37; box-shadow: 0 0 0 3px rgba(212,175,55,0.15); }
+.auth-input::placeholder { color: #475569; }
+
+.auth-submit-btn {
+    width: 100%; background: #d4af37; color: #0f172a;
+    padding: 0.95rem; border: none; border-radius: 8px;
+    font-size: 0.9rem; font-weight: 800; letter-spacing: 0.1em;
+    text-transform: uppercase; cursor: pointer; transition: all 0.3s; margin-top: 0.8rem;
+}
+.auth-submit-btn:hover { background: #c59b27; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(212,175,55,0.4); }
+.auth-submit-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+.auth-footer-link { text-align: center; margin-top: 1.5rem; color: #64748b; font-size: 0.88rem; }
+.auth-footer-link a { color: #d4af37; font-weight: 700; text-decoration: none; }
+.auth-footer-link a:hover { text-decoration: underline; }
+
+.auth-alert {
+    padding: 0.85rem 1.1rem; border-radius: 8px; font-size: 0.88rem;
+    margin-bottom: 1.2rem; display: none; align-items: center; gap: 0.5rem;
+}
+.auth-alert.success { background: rgba(16,185,129,0.15); border: 1px solid rgba(16,185,129,0.3); color: #6ee7b7; }
+.auth-alert.error   { background: rgba(239,68,68,0.15);  border: 1px solid rgba(239,68,68,0.3);  color: #fca5a5; }
+
+.password-wrap { position: relative; }
+.toggle-pass {
+    position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
+    background: none; border: none; color: #475569; cursor: pointer; font-size: 1rem; padding: 0;
+}
+.toggle-pass:hover { color: #d4af37; }
+
+.forgot-link { text-align: right; margin-top: -0.8rem; margin-bottom: 1.2rem; }
+.forgot-link a { font-size: 0.82rem; color: #64748b; text-decoration: none; }
+.forgot-link a:hover { color: #d4af37; }
+</style>
+
+<section class="auth-page">
+    <div class="auth-card">
+        <div class="auth-logo-wrap">
+            <img src="assets/images/nav_logo.png" alt="MyPropertyStation Logo">
+        </div>
+
+        <h1 class="auth-title">Welcome <span>Back</span></h1>
+        <div class="auth-divider"></div>
+        <p class="auth-subtitle">Sign in to your MyPropertyStation account</p>
+
+        <!-- Alert Box -->
+        <div id="loginAlert" class="auth-alert"></div>
+
+        <form id="loginForm" novalidate>
+            <div class="auth-form-group">
+                <label class="auth-label">Email Address *</label>
+                <input type="email" id="email" name="email" class="auth-input" placeholder="you@email.com" required>
+            </div>
+
+            <div class="auth-form-group">
+                <label class="auth-label">Password *</label>
+                <div class="password-wrap">
+                    <input type="password" id="password" name="password" class="auth-input" placeholder="Your password" required>
+                    <button type="button" class="toggle-pass" onclick="togglePass('password', this)"><i class="fa-solid fa-eye"></i></button>
+                </div>
+            </div>
+
+            <div class="forgot-link"><a href="#">Forgot password?</a></div>
+
+            <button type="submit" id="loginBtn" class="auth-submit-btn">Sign In</button>
+        </form>
+
+        <div class="auth-footer-link">
+            Don't have an account? <a href="signup.php">Create Account</a>
+        </div>
+    </div>
+</section>
+
+<script>
+function togglePass(id, btn) {
+    const input = document.getElementById(id);
+    const isPass = input.type === 'password';
+    input.type = isPass ? 'text' : 'password';
+    btn.innerHTML = isPass ? '<i class="fa-solid fa-eye-slash"></i>' : '<i class="fa-solid fa-eye"></i>';
+}
+
+function showAlert(type, msg) {
+    const el = document.getElementById('loginAlert');
+    el.className = `auth-alert ${type}`;
+    el.innerHTML = `<i class="fa-solid ${type === 'success' ? 'fa-circle-check' : 'fa-circle-xmark'}"></i> ${msg}`;
+    el.style.display = 'flex';
+}
+
+document.getElementById('loginForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = document.getElementById('loginBtn');
+    btn.disabled = true;
+    btn.textContent = 'Signing In...';
+
+    const payload = {
+        email:    document.getElementById('email').value.trim(),
+        password: document.getElementById('password').value,
+    };
+
+    try {
+        const res  = await fetch('../backend/api/auth/login.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body:    JSON.stringify(payload),
+        });
+        const data = await res.json();
+        if (data.success) {
+            // Store token & user info in localStorage
+            localStorage.setItem('mps_token',     data.token);
+            localStorage.setItem('mps_user',      JSON.stringify(data.user));
+            localStorage.setItem('mps_user_name', data.user.full_name);
+
+            showAlert('success', data.message);
+            setTimeout(() => window.location.href = 'index.php', 1500);
+        } else {
+            showAlert('error', data.message);
+        }
+    } catch (err) {
+        showAlert('error', 'Network error. Please try again.');
+    } finally {
+        btn.disabled = false;
+        btn.textContent = 'Sign In';
+    }
+});
+</script>
+
+<?php include 'components/footer.php'; ?>
