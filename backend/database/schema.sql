@@ -18,17 +18,17 @@ CREATE TABLE IF NOT EXISTS users (
     role        ENUM('user', 'admin') DEFAULT 'user',
     is_verified TINYINT(1)    DEFAULT 0,
     created_at  TIMESTAMP     DEFAULT CURRENT_TIMESTAMP,
-    updated_at  TIMESTAMP     DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+    updated_at  DATETIME      NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB;
 
--- Sessions Table (Optional: for server-side session tracking)
+-- Sessions Table (for server-side session token tracking)
 CREATE TABLE IF NOT EXISTS user_sessions (
     id          INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     user_id     INT UNSIGNED NOT NULL,
-    token       VARCHAR(255) NOT NULL UNIQUE,
-    ip_address  VARCHAR(45)  DEFAULT NULL,
-    user_agent  TEXT         DEFAULT NULL,
+    token       VARCHAR(191) NOT NULL UNIQUE,
+    ip_address  VARCHAR(45)  NULL DEFAULT NULL,
+    user_agent  TEXT         NULL DEFAULT NULL,
     created_at  TIMESTAMP    DEFAULT CURRENT_TIMESTAMP,
-    expires_at  TIMESTAMP    DEFAULT NULL,
+    expires_at  DATETIME     NULL DEFAULT NULL,
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 ) ENGINE=InnoDB;

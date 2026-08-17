@@ -4,7 +4,7 @@
 /* Reuse styles from signup.php */
 .auth-page {
     min-height: 100vh;
-    background: linear-gradient(135deg, #0f172a 0%, #1e2a3a 50%, #0f172a 100%);
+    background: linear-gradient(135deg, #2b020a 0%, #80081d 50%, #2b020a 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -25,7 +25,7 @@
 .auth-logo-wrap img { height: 60px; }
 
 .auth-title {
-    font-family: 'Cinzel', 'Playfair Display', Georgia, serif;
+    font-family: var(--font-heading);
     font-size: 1.9rem;
     font-weight: 700;
     color: #ffffff;
@@ -50,7 +50,7 @@
 }
 
 .auth-input {
-    width: 100%; background: #0f172a;
+    width: 100%; background: #2b020a;
     border: 1px solid rgba(255,255,255,0.1);
     border-radius: 8px; padding: 0.85rem 1.1rem;
     color: #ffffff; font-size: 0.95rem; outline: none;
@@ -60,7 +60,7 @@
 .auth-input::placeholder { color: #475569; }
 
 .auth-submit-btn {
-    width: 100%; background: #d4af37; color: #0f172a;
+    width: 100%; background: #d4af37; color: #2b020a;
     padding: 0.95rem; border: none; border-radius: 8px;
     font-size: 0.9rem; font-weight: 800; letter-spacing: 0.1em;
     text-transform: uppercase; cursor: pointer; transition: all 0.3s; margin-top: 0.8rem;
