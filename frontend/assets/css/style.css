@@ -358,8 +358,11 @@ h1, h2, h3, h4, .font-heading {
     border-bottom: 1px solid rgba(15, 118, 110, 0.2);
     padding: 1.25rem 0;
     overflow: hidden;
-    position: relative;
-    z-index: 5;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 20;
 }
 
 .ticker-track {
@@ -793,6 +796,10 @@ h1, h2, h3, h4, .font-heading {
 /* Swiper Controls */
 .swiper-button-next, .swiper-button-prev {
     color: #c59b27 !important;
+}
+
+.heroSwiper .swiper-pagination {
+    bottom: 70px !important;
 }
 
 .swiper-pagination-bullet-active {
@@ -2801,153 +2808,84 @@ h1, h2, h3, h4, .font-heading {
 }
 
 /* ==========================================================================
-   SEARCH WIDGET BANNER
+   HERO BRAND BANNER (REPLACES SEARCH WIDGET)
    ========================================================================== */
-.search-widget-banner {
-    background: transparent;
-    padding: 1.5rem 0;
+.hero-brand-banner {
     position: absolute;
-    top: 105px;
+    top: 155px; /* positioned nicely in the upper hero area below header */
     left: 0;
     right: 0;
     z-index: 100;
-    margin-top: 0;
-    border-bottom: none;
+    pointer-events: none; /* allows Swiper sliding/interaction */
 }
-.search-widget-container {
-    max-width: 1050px;
+
+.hero-brand-container {
+    max-width: 1200px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    
-}
-.search-widget-title {
-    color: #e2e8f0;
-    font-size: 1.8rem;
-    font-family: var(--font-body);
-    font-weight: 300;
-    margin-bottom: 1.5rem;
-    text-align: center;
-}
-.search-widget-title span {
-    font-family: 'Great Vibes', cursive; /* Given they use Cinzel/Outfit, let's use a nice cursive or just gold */
-    font-size: 2.5rem;
-    color: #C8A951;
-    font-weight: 400;
-    margin-left: 0.5rem;
-}
-.search-widget-tabs {
-    display: flex;
-    gap: 1.5rem;
-    margin-bottom: 1rem;
-    flex-wrap: wrap;
     justify-content: center;
-    background: #fff;
-    padding: 0.75rem 2rem;
-    border-radius: 40px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    width: max-content;
-    margin-left: auto;
-    margin-right: auto;
-}
-.search-widget-tabs a {
-    color: #000;
-    text-decoration: none;
-    font-size: 0.95rem;
-    font-weight: 600;
-    padding-bottom: 0.4rem;
-    border-bottom: 2px solid transparent;
-    transition: all 0.3s ease;
-}
-.search-widget-tabs a:hover {
-    color: #222;
-}
-.search-widget-tabs a.active {
-    color: #000;
-    border-bottom-color: #000;
-}
-.search-widget-form {
-    background: #fff;
-    border-radius: 40px;
-    display: flex;
-    align-items: center;
-    padding: 0.5rem;
-    width: 100%;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-}
-.sw-input-group {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    padding: 0 1.5rem;
-    gap: 0.8rem;
-}
-.sw-icon-gold {
-    color: #C8A951;
-    font-size: 1.1rem;
-}
-.sw-input {
-    border: none;
-    outline: none;
-    font-size: 0.95rem;
-    width: 100%;
-    color: #292929;
-    font-family: var(--font-body);
-}
-.sw-select {
-    border: none;
-    outline: none;
-    font-size: 0.95rem;
-    width: 100%;
-    color: #292929;
-    font-family: var(--font-body);
-    background: transparent;
-    cursor: pointer;
-    appearance: none;
-}
-.sw-divider {
-    width: 1px;
-    height: 30px;
-    background: #e2e8f0;
-}
-.sw-btn {
-    background: #C8A951;
-    color: #292929;
-    border: none;
-    padding: 0.8rem 2rem;
-    border-radius: 30px;
-    font-weight: 700;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-.sw-btn:hover {
-    background: #e5be3d;
-    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+    gap: 1.25rem;
 }
 
-@media (max-width: 900px) {
-    .search-widget-form {
-        flex-direction: column;
-        border-radius: 12px;
-        padding: 1rem;
-        gap: 1rem;
+.hero-brand-logo {
+    height: 100px;
+    width: 100px;
+    object-fit: contain;
+    border-radius: 50%;
+    border: 2px solid rgba(200, 169, 81, 0.4); /* gold border tint */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(200, 169, 81, 0.2);
+    animation: fadeInDownLogo 1.2s ease-out;
+}
+
+.hero-brand-name {
+    font-family: 'Cinzel', serif;
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    text-align: center;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+    margin-right: -0.35em; /* offset letter-spacing on last letter */
+    animation: fadeInUpBrand 1.2s ease-out;
+}
+
+@keyframes fadeInDownLogo {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
     }
-    .sw-divider {
-        width: 100%;
-        height: 1px;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
-    .sw-input-group {
-        width: 100%;
-        padding: 0.5rem;
+}
+
+@keyframes fadeInUpBrand {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
     }
-    .sw-btn {
-        width: 100%;
-        justify-content: center;
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-brand-banner {
+        top: 135px;
+    }
+    .hero-brand-logo {
+        height: 80px;
+        width: 80px;
+    }
+    .hero-brand-name {
+        font-size: 1.8rem;
+        letter-spacing: 0.25em;
+        margin-right: -0.25em;
     }
 }
 

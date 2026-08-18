@@ -41,7 +41,7 @@
                 <h4 class="col-title">Quick Navigation</h4>
                 <ul class="footer-links">
                     <li><a href="index.php"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
-                    <li><a href="index.php#about"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
+                    <li><a href="about.php"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
                     <li><a href="projects.php"><i class="fa-solid fa-chevron-right"></i> Projects</a></li>
                     <li><a href="index.php#contact"><i class="fa-solid fa-chevron-right"></i> Contact Us</a></li>
                 </ul>

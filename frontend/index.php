@@ -6,46 +6,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
-<!-- Search Widget Banner -->
-<section class="search-widget-banner">
+<!-- Hero Brand Banner -->
+<section class="hero-brand-banner">
     <div class="container">
-        <div class="search-widget-container">
-            <div class="search-widget-tabs">
-                <a href="#" class="active">Buy</a>
-                <a href="#">Rent</a>
-                <a href="#">Flats</a>
-                <a href="#">PG</a>
-                <a href="#">Plot</a>
-                <a href="#">Commercial</a>
-            </div>
-            
-            <form class="search-widget-form" onsubmit="event.preventDefault();">
-                <div class="sw-input-group">
-                    <i class="fa-solid fa-house sw-icon-gold"></i>
-                    <select class="sw-select">
-                        <option value="" disabled selected>Property Type</option>
-                        <option>House/Villa</option>
-                        <option>Apartment</option>
-                        <option>Builder Floor</option>
-                        <option>Commercial</option>
-                    </select>
-                </div>
-                
-                <div class="sw-divider"></div>
-                
-                <div class="sw-input-group">
-                    <i class="fa-solid fa-indian-rupee-sign sw-icon-gold"></i>
-                    <select class="sw-select">
-                        <option value="" disabled selected>Budget</option>
-                        <option>Upto 80 Lacs</option>
-                        <option>80 Lacs - 1.5 Cr</option>
-                        <option>1.5 Cr - 3 Cr</option>
-                        <option>Above 3 Cr</option>
-                    </select>
-                </div>
-                
-                <button type="submit" class="sw-btn"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
-            </form>
+        <div class="hero-brand-container">
+            <img src="assets/images/nav_logo.png" alt="MyPropertyStation Logo" class="hero-brand-logo" style="width: 100px; height: 100px; border-radius: 50%; object-fit: contain; display: block; margin: 0 auto;">
+            <span class="hero-brand-name">mypropertystation</span>
         </div>
     </div>
 </section>
@@ -83,25 +49,25 @@
             <div class="swiper-button-prev"></div>
         </div>
     </div>
-</section>
 
-<!-- Scrolling Ticker Tape -->
-<div id="ticker" class="ticker-section">
-    <div class="ticker-track">
-        <div class="ticker-item"><i class="fa-solid fa-crown"></i> 100% Verified Legal Title Deeds</div>
-        <div class="ticker-item"><i class="fa-solid fa-gem"></i> 0% Hidden Brokerage Commissions</div>
-        <div class="ticker-item"><i class="fa-solid fa-vr-cardboard"></i> 4K Ultra-HD Virtual 3D Tours</div>
-        <div class="ticker-item"><i class="fa-solid fa-helicopter"></i> VIP Helicopter & Jet Transfers</div>
-        <div class="ticker-item"><i class="fa-solid fa-user-shield"></i> Vaulted Identity & Data Privacy</div>
-        <div class="ticker-item"><i class="fa-solid fa-infinity"></i> Direct Owner & Developer Escrow</div>
-        <div class="ticker-item"><i class="fa-solid fa-crown"></i> 100% Verified Legal Title Deeds</div>
-        <div class="ticker-item"><i class="fa-solid fa-gem"></i> 0% Hidden Brokerage Commissions</div>
-        <div class="ticker-item"><i class="fa-solid fa-vr-cardboard"></i> 4K Ultra-HD Virtual 3D Tours</div>
-        <div class="ticker-item"><i class="fa-solid fa-helicopter"></i> VIP Helicopter & Jet Transfers</div>
-        <div class="ticker-item"><i class="fa-solid fa-user-shield"></i> Vaulted Identity & Data Privacy</div>
-        <div class="ticker-item"><i class="fa-solid fa-infinity"></i> Direct Owner & Developer Escrow</div>
+    <!-- Scrolling Ticker Tape -->
+    <div id="ticker" class="ticker-section">
+        <div class="ticker-track">
+            <div class="ticker-item"><i class="fa-solid fa-crown"></i> 100% Verified Legal Title Deeds</div>
+            <div class="ticker-item"><i class="fa-solid fa-gem"></i> 0% Hidden Brokerage Commissions</div>
+            <div class="ticker-item"><i class="fa-solid fa-vr-cardboard"></i> 4K Ultra-HD Virtual 3D Tours</div>
+            <div class="ticker-item"><i class="fa-solid fa-helicopter"></i> VIP Helicopter & Jet Transfers</div>
+            <div class="ticker-item"><i class="fa-solid fa-user-shield"></i> Vaulted Identity & Data Privacy</div>
+            <div class="ticker-item"><i class="fa-solid fa-infinity"></i> Direct Owner & Developer Escrow</div>
+            <div class="ticker-item"><i class="fa-solid fa-crown"></i> 100% Verified Legal Title Deeds</div>
+            <div class="ticker-item"><i class="fa-solid fa-gem"></i> 0% Hidden Brokerage Commissions</div>
+            <div class="ticker-item"><i class="fa-solid fa-vr-cardboard"></i> 4K Ultra-HD Virtual 3D Tours</div>
+            <div class="ticker-item"><i class="fa-solid fa-helicopter"></i> VIP Helicopter & Jet Transfers</div>
+            <div class="ticker-item"><i class="fa-solid fa-user-shield"></i> Vaulted Identity & Data Privacy</div>
+            <div class="ticker-item"><i class="fa-solid fa-infinity"></i> Direct Owner & Developer Escrow</div>
+        </div>
     </div>
-</div>
+</section>
 
 <!-- Curated Collection Section -->
 <section id="projects" class="projects-section section-padding">

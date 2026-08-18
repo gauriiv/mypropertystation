@@ -34,6 +34,9 @@
                     <a href="index.php" class="nav-link <?php echo ($currentPage == 'index.php' || $currentPage == '') ? 'active' : ''; ?>">HOME</a>
                 </li>
                 <li>
+                    <a href="about.php" class="nav-link <?php echo ($currentPage == 'about.php') ? 'active' : ''; ?>">ABOUT US</a>
+                </li>
+                <li>
                     <a href="services.php" class="nav-link <?php echo ($currentPage == 'services.php') ? 'active' : ''; ?>">SERVICES</a>
                 </li>
                 <li class="nav-dropdown">
@@ -81,6 +84,9 @@
     <ul class="mobile-menu-list">
         <li>
             <a href="index.php" class="<?php echo ($currentPage == 'index.php' || $currentPage == '') ? 'active' : ''; ?>">HOME</a>
+        </li>
+        <li>
+            <a href="about.php" class="<?php echo ($currentPage == 'about.php') ? 'active' : ''; ?>">ABOUT US</a>
         </li>
         <li>
             <a href="services.php" class="<?php echo ($currentPage == 'services.php') ? 'active' : ''; ?>">SERVICES</a>
